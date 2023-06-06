@@ -124,7 +124,7 @@ switch (today) {
             pic: "images/cold-brew.jpg",
             alt: "A picture of a Cold Brew",
             day: "Saturday",
-            desc: `Give it to me with sweet-cream foam!`
+            desc: `Give it to me on the rocks!`
         }
         break;
 
