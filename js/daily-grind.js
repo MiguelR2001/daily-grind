@@ -21,9 +21,26 @@ function coffeeTemplate() {
 
 let myDate = new Date();
 
+let coffee = "";
+
 let today = myDate.getDay();
 
+//use location object to access querystring (address bar)
+const queryString = window.location.search;
+    
+//output to console    
+console.log(queryString);
+    
+//separate query string parameters
+const urlParams = new URLSearchParams(queryString);
+
 //today = 3;
+
+if(urlParams.has("day")){//from querystring
+    today = urlParams.get("day");
+ }
+
+ today = parseInt(today);
 
 switch (today) {
 
@@ -45,22 +62,62 @@ switch (today) {
 
     case 2:
         today = "Tuesday";
+        coffee = {
+            name: "Drip Coffee",
+            color: "black",
+            pic: "images/drip.jpg",
+            alt: "A picture of a drip coffee",
+            day: "Tuesday",
+            desc: `Give it to me straight!`
+        }
         break;
 
     case 3:
         today = "Wednesday";
+        coffee = {
+            name: "Caramel Latte",
+            color: "yellow",
+            pic: "images/caramel.latte.jpg",
+            alt: "A picture of a Caramel Latte",
+            day: "Tuesday",
+            desc: `Give it to me straight!`
+        }
         break;
 
     case 4:
         today = "Thursday";
+        coffee = {
+            name: "Drip Coffee",
+            color: "black",
+            pic: "images/drip.jpg",
+            alt: "A picture of a drip coffee",
+            day: "Tuesday",
+            desc: `Give it to me straight!`
+        }
         break;
 
     case 5:
         today = "Friday";
+        coffee = {
+            name: "Drip Coffee",
+            color: "black",
+            pic: "images/drip.jpg",
+            alt: "A picture of a drip coffee",
+            day: "Tuesday",
+            desc: `Give it to me straight!`
+        }
         break;
 
     case 6:
         today = "Saturday";
+        coffee = {
+            name: "Drip Coffee",
+            color: "black",
+            pic: "images/drip.jpg",
+            alt: "A picture of a drip coffee",
+            day: "Tuesday",
+            desc: `Give it to me straight!`
+        }
         break;
 
     default:
@@ -68,6 +125,7 @@ switch (today) {
 }
 
 document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
+document.querySelector("html").style.backgroundColor = coffee.color;
 
 //alert(today);
 console.log(coffee);
