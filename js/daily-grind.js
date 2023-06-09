@@ -88,7 +88,7 @@ switch (today) {
             pic: "images/caramel-latte.jpg",
             alt: "A picture of a Caramel Latte",
             day: "Wednesday",
-            desc: `give me EXTRA caramel!`
+            desc: `give me extra EXTRA caramel!`
         }
         break;
 
