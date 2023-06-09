@@ -27,7 +27,7 @@ let today = myDate.getDay();
 
 //use location object to access querystring (address bar)
 const queryString = window.location.search;
-    
+
 //output to console    
 console.log(queryString);
     
@@ -52,7 +52,7 @@ switch (today) {
             pic: "images/pumpkin-spice-latte.jpg",
             alt: "A picture of a Pumpkin Spice Latte",
             day: "Sunday",
-            desc: `The classic taste of Fall!`
+            desc: `the classic taste of Fall!`
         }
         break;
 
@@ -76,7 +76,7 @@ switch (today) {
             pic: "images/drip.jpg",
             alt: "A picture of a drip coffee",
             day: "Tuesday",
-            desc: `Give it to me straight!`
+            desc: `give it to me straight!`
         }
         break;
 
@@ -84,11 +84,11 @@ switch (today) {
         today = "Wednesday";
         coffee = {
             name: "Caramel Latte",
-            color: "yellow",
+            color: "lightsalmon",
             pic: "images/caramel-latte.jpg",
             alt: "A picture of a Caramel Latte",
             day: "Wednesday",
-            desc: `Give me EXTRA caramel!`
+            desc: `give me EXTRA caramel!`
         }
         break;
 
@@ -100,7 +100,7 @@ switch (today) {
             pic: "images/mocha.jpg",
             alt: "A picture of a Mocha",
             day: "Thursday",
-            desc: `Chocolate fixes everything in life!`
+            desc: `chocolate fixes everything in life!`
         }
         break;
 
@@ -108,11 +108,11 @@ switch (today) {
         today = "Friday";
         coffee = {
             name: "Frappaccino",
-            color: "lightblue",
+            color: "darkgreen",
             pic: "images/frappaccino.jpg",
             alt: "A picture of a Frappaccino",
             day: "Friday",
-            desc: `Extra whip for ME!`
+            desc: `extra whip for ME!`
         }
         break;
 
@@ -120,11 +120,11 @@ switch (today) {
         today = "Saturday";
         coffee = {
             name: "Cold Brew",
-            color: "red",
+            color: "midnightblue",
             pic: "images/cold-brew.jpg",
             alt: "A picture of a Cold Brew",
             day: "Saturday",
-            desc: `Give it to me on the rocks!`
+            desc: `I'm not soft, give it to me on the rocks!`
         }
         break;
 
@@ -132,8 +132,29 @@ switch (today) {
         today = "Not sure what day it is!";
 }
 
+function coffeeDescription(){
+    return `<p>
+    <span class="feature">${coffee.name} is </span> Gluten-free selfies
+    normcore chillwave. Listicle 90's chambray, seitan cold-pressed try-hard
+    Etsy authentic flexitarian vinyl. Meditation bespoke freegan,
+    single-origin coffee cred seitan 90's gentrify brunch Williamsburg squid
+    cold-pressed. Brooklyn readymade Tumblr wayfarers ethical.
+  </p> 
+  <p>
+    <span class="feature">Enjoy ${coffee.name} with our </span> Polaroid
+    iPhone plaid, Pitchfork Shoreditch paleo. Hashtag keytar chia scenester
+    Pinterest, semiotics tousled food truck. YOLO scenester deep v,
+    taxidermy paleo quinoa McSweeney's Carles VHS mustache Williamsburg
+    gluten-free readymade cold-pressed. Truffaut Thundercats Schlitz,
+    listicle organic Brooklyn paleo squid asymmetrical readymade migas
+    gluten-free Austin.
+  </p>
+    `;
+}
+
 document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
 document.querySelector("html").style.backgroundColor = coffee.color;
+document.getElementById("coffee-description").innerHTML = coffeeDescription();
 
 //alert(today);
 console.log(coffee);
